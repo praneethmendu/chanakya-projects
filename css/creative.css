@@ -27,13 +27,18 @@ a {
   a:focus, a:hover {
     color: #f05f40; }
 
+#chana {
+	font-family: 'Cormorant Garamond', serif;
+	font-size: 95px;
+	margin-bottom: -10px
+	}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; }
+  font-family: 'Lato', sans-serif; }
 
 p {
   font-size: 16px;
@@ -155,15 +160,14 @@ header.masthead {
   background-size: cover; }
   header.masthead .header-content {
     position: relative;
-    width: 100%;
+    width: 120%;
     padding: 150px 15px 100px;
-    text-align: center; }
+    text-align: left;	}
     header.masthead .header-content .header-content-inner h1 {
       font-size: 30px;
       font-weight: 700;
       margin-top: 0;
-      margin-bottom: 0;
-      text-transform: uppercase; }
+      margin-bottom: 0;}
     header.masthead .header-content .header-content-inner hr {
       margin: 30px auto; }
     header.masthead .header-content .header-content-inner p {
@@ -187,7 +191,7 @@ header.masthead {
           margin-right: auto;
           margin-left: auto; }
           header.masthead .header-content .header-content-inner h1 {
-            font-size: 50px; }
+            font-size: 100px; }
           header.masthead .header-content .header-content-inner p {
             font-size: 18px;
             max-width: 80%;
