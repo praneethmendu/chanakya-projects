@@ -65,7 +65,7 @@
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 13.071, lng: 80.241},
+          center: {lat: 13.148, lng: 80.177},
           zoom: 12,
 		  styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
@@ -74,7 +74,7 @@
             {
               featureType: 'administrative.locality',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: '#65CF51'}]
             },
             {
               featureType: 'poi',
@@ -109,12 +109,12 @@
             {
               featureType: 'road.highway',
               elementType: 'geometry',
-              stylers: [{color: '#746855'}]
+              stylers: [{color: '#43b3FF'}]
             },
             {
               featureType: 'road.highway',
               elementType: 'geometry.stroke',
-              stylers: [{color: '#1f2835'}]
+              stylers: [{color: '#746855'}]
             },
             {
               featureType: 'road.highway',
@@ -129,7 +129,7 @@
             {
               featureType: 'transit.station',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#d59563'}]
+              stylers: [{color: '#65CF51'}]
             },
             {
               featureType: 'water',
@@ -139,7 +139,7 @@
             {
               featureType: 'water',
               elementType: 'labels.text.fill',
-              stylers: [{color: '#515c6d'}]
+              stylers: [{color: '#65CF51'}]
             },
             {
               featureType: 'water',
@@ -155,13 +155,13 @@
 		var imagei = 'img/map-marker.svg';
 		
         service.getDetails({
-          placeId: 'ChIJTdSY8m1dUjoRGOqex_6UzhI'
+          placeId: 'ChIJ3eGEjVdhUjoRZONGVjMhOhY'
         }, function(place, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             var marker = new google.maps.Marker({
               map: map,
               position: place.geometry.location,
-			  icon: imagei
+			 
             });
             google.maps.event.addListener(marker, 'click', function() {
               infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
