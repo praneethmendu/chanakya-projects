@@ -63,11 +63,33 @@
 
 })(jQuery); // End of use strict
 
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 13.071, lng: 80.241},
-          zoom: 12,
-		  styles: [
+
+// Google Maps Scripts
+var map = null;
+// When the window has finished loading create our google map below
+google.maps.event.addDomListener(window, 'load', init);
+google.maps.event.addDomListener(window, 'resize', function() {
+  map.setCenter(new google.maps.LatLng(40.6700, -73.9400));
+});
+
+function init() {
+  // Basic options for a simple Google Map
+  // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+  var mapOptions = {
+    // How zoomed in you want the map to start at (always required)
+    zoom: 15,
+
+    // The latitude and longitude to center the map (always required)
+    center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+    // Disables the default Google Maps UI components
+    disableDefaultUI: true,
+    scrollwheel: false,
+    draggable: false,
+
+    // How you would like to style the map.
+    // This is where you would paste any style found on Snazzy Maps.
+styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
             {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
@@ -147,28 +169,21 @@
               stylers: [{color: '#17263c'}]
             }
           ]	
-        });
-		
+  };
 
-        var infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-		var imagei = 'img/map-marker.svg';
-		
-        service.getDetails({
-          placeId: 'ChIJTdSY8m1dUjoRGOqex_6UzhI'
-        }, function(place, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-              map: map,
-              position: place.geometry.location,
-			  icon: imagei
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-              infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                'Place ID: ' + place.place_id + '<br>' +
-                place.formatted_address + '</div>');
-              infowindow.open(map, this);
-            });
-          }
-        });
-      }
+  // Get the HTML DOM element that will contain your map
+  // We are using a div with id="map" seen below in the <body>
+  var mapElement = document.getElementById('map');
+
+  // Create the Google Map using out element and options defined above
+  map = new google.maps.Map(mapElement, mapOptions);
+
+  // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
+  var image = 'img/map-marker.svg';
+  var myLatLng = new google.maps.LatLng(40.6700, -73.9400);
+  var beachMarker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    icon: image
+  });
+}
