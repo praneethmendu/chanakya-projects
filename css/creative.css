@@ -66,6 +66,9 @@ section {
   background: #222222;
   text-shadow: none; }
 
+ img {
+ width: 100%;}
+  
 img::selection {
   color: white;
   background: transparent; }
@@ -403,6 +406,7 @@ header.masthead {
   .btn-primary .badge {
     color: #006DB6;
     background-color: white; }
+	
 
 .btn {
   font-weight: 700;
@@ -480,9 +484,9 @@ header.masthead {
 	padding-top: 22%;
 	color: white;
 	font-size: 20px;
-	font-family: 'Cormorant Garamond', serif;
+
 	text-shadow: 2px 2px 2px black;
-	font-weight: 300;
+
 	position: relative;
 	z-index: 25;
 	text-align:center;
