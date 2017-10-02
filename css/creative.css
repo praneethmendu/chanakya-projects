@@ -228,7 +228,7 @@ header.masthead {
 		  header.masthead .header-content .header-content-inner img {
 			position: absolute;
 			top: -2%;
-			margin-left: 430px;
+			margin-left: 5%;
 			height: 180px;			
 			-webkit-filter: drop-shadow( 4px 4px 6px #000 ); 
             filter: drop-shadow( 4px 4px 6px #000 );}
@@ -481,7 +481,7 @@ header.masthead {
 
 
 #addr h5 {
-	padding-top: 22%;
+	padding-top: 21%;
 	color: white;
 	font-size: 20px;
 
